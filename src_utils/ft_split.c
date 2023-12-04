@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:46:24 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/18 15:46:30 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:08:32 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	ft_free(char **split)
 
 	i = 0;
 	while (split[i])
-	{	
+	{
 		free(split[i]);
 		i++;
 	}

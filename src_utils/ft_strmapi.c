@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:52:54 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/10/16 16:16:38 by ahiguera         ###   ########.fr       */
+/*   Created: 2023/10/06 16:53:36 by ahiguera          #+#    #+#             */
+/*   Updated: 2023/12/04 20:12:50 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(const char *str, char (*f)(unsigned int, char))
 {
-	char	*result;
-	size_t	len1;
-	size_t	len2;
+	unsigned int	i;
+	char			*result;
+	size_t			len;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
-	if (result == NULL)
+	len = ft_strlen(str);
+	result = malloc((len + 1) * sizeof(char));
+	if (!result)
 		return (NULL);
-	ft_memcpy(result, s1, len1);
-	ft_memcpy(result + len1, s2, len2);
-	result[len1 + len2] = '\0';
+	i = 0;
+	while (i < len)
+	{
+		result[i] = (*f)(i, str[i]);
+		i++;
+	}
+	result[i] = 0;
 	return (result);
 }
