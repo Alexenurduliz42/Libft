@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 21:11:51 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/12/04 19:58:51 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:36:10 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
+/* ------------------------------------------------------------------------- */
+//libft prototypes
+/* ------------------------------------------------------------------------- */
 typedef struct s_list
 {
 	void			*content;
@@ -50,5 +54,40 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* ------------------------------------------------------------------------- */
+//ft_printf prototypes
+/* ------------------------------------------------------------------------- */
+# define DECIMAL		"0123456789"
+# define HEXADECIMAL_UP "0123456789ABCDEF"
+# define HEXADECIMAL_LO "0123456789abcdef"
+# define OCTAL			"01234567"
+
+# define PTR_PREFIX		"0x"
+# define NULL_STR		"(null)"
+
+int		ft_printf(char const *h, ...);
+
+void	pf_betterwrite(void *buf, size_t len, int *result);
+void	pf_putchar(char c, int *result);
+void	pf_putstr(char *str, int *result);
+
+void	pf_putbase(unsigned long n, char *base, int *result);
+void	pf_putsigned(int n, int *result);
+void	pf_putpointer(void *ptr, int *result);
+void	pf_putuntilpercent(char *str, size_t *i, int *result);
+
+/* ------------------------------------------------------------------------- */
+//get_next_line prototypes
+/* ------------------------------------------------------------------------- */
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 50
+# endif
+
+void	gn_strncpy(char *result, char *orin, size_t len);
+void	gn_free(char *fres);
+char	gn_strchr(char *str, char c);
+
+char	*get_next_line(int fd);
 
 #endif
