@@ -6,12 +6,12 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:55:56 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/12/04 21:08:50 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:47:49 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//TODO: revisar funciones de libft que conectan aqui
+
 void	pf_betterwrite(void *buf, size_t len, int *result)
 {
 	ssize_t	w;

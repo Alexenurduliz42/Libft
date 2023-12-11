@@ -6,12 +6,12 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:53:18 by ahiguera          #+#    #+#             */
-/*   Updated: 2023/12/04 21:08:42 by ahiguera         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:47:42 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//TODO: revisar funciones de libft que conectan aqui
+
 void	pf_putbase(unsigned long n, char *base, int *result)
 {
 	size_t	lenbase;
